@@ -36,6 +36,7 @@ jobs:
         with:
           nuitka-version: main
           script-name: ocr_server.py
+          standalone: true
           onefile: true
 
       # Uploads artifact
