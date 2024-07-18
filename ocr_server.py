@@ -76,7 +76,12 @@ def get_img(request, img_type="file", img_name="image"):
             pass
     elif img_type == "url":
         print(request.form["url"])
-        img = requests.get(request.form["url"]).content
+        req = requests.get(
+            request.form["url"], 
+            headers= {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"}
+        )
+        print(req)
+        img = req.content
     else:
         img = request.files.get(img_name).read()
     return img
