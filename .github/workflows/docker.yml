@@ -27,5 +27,5 @@ jobs:
         with:
           push: true
           file: Dockerfile_action
-          tags: ${{ secrets.DOCKERHUB_REPO }}
+          tags: ${{ secrets.DOCKERHUB_REPO }}:latest
           platforms: "linux/amd64,linux/arm64"
